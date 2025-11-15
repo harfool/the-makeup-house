@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://themakeuphouse.com/</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://images.jdmagicbox.com/comp/gulabpura/i5/9999p1482.1482.230904193654.x3i5/catalogue/the-makeup-house-gulabpura-beauty-parlours-yj4680ad63.jpg</image:loc>
+      <image:title>The Makeup House Gulabpura - Bridal Makeup</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Services Page -->
+  <url>
+    <loc>https://themakeuphouse.com/services</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Gallery Page -->
+  <url>
+    <loc>https://themakeuphouse.com/gallery</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.jdmagicbox.com/comp/gulabpura/i5/9999p1482.1482.230904193654.x3i5/catalogue/the-makeup-house-gulabpura-beauty-parlours-udfrqirwdp.jpg</image:loc>
+      <image:title>Bridal Makeup Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.jdmagicbox.com/comp/gulabpura/i5/9999p1482.1482.230904193654.x3i5/catalogue/the-makeup-house-gulabpura-beauty-parlours-voaznlsljg.jpg</image:loc>
+      <image:title>Professional Makeup Gallery</image:title>
+    </image:image>
+  </url>
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://themakeuphouse.com/about</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://themakeuphouse.com/contact</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Testimonials Page -->
+  <url>
+    <loc>https://themakeuphouse.com/testimonials</loc>
+    <lastmod>2025-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+</urlset>
