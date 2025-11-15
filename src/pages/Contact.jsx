@@ -93,8 +93,8 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Call Us',
-      content: '+1 (234) 567-890',
-      link: 'tel:+1234567890',
+      content: '+91 8955748498',
+      link: 'tel:+918955748498',
     },
     {
       icon: Mail,
@@ -166,7 +166,7 @@ const Contact = () => {
                       type="tel"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+1 (234) 567-890"
+                      placeholder="+91 8955748498"
                       required
                       aria-required="true"
                     />
@@ -296,7 +296,7 @@ const Contact = () => {
                     Quick response via WhatsApp
                   </p>
                   <a
-                    href="https://wa.me/1234567890"
+                    href="https://wa.me/918955748498"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block"

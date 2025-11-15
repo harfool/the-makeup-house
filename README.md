@@ -284,7 +284,7 @@ This project is open source and available under the MIT License.
 
 For questions or issues, please contact:
 - Email: info@themakeuphouse.com
-- Phone: +1 (234) 567-890
+- Phone: +91 8955748498
 
 ---
 
