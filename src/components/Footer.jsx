@@ -109,8 +109,23 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 mt-8 pt-8 text-center">
+        <div className="border-t border-white/10 mt-8 pt-8 text-center space-y-3">
           <p className="text-white/60 text-sm">&copy; {currentYear} The Makeup House. All rights reserved.</p>
+          <div className="flex items-center justify-center gap-2 text-white/40 text-xs">
+            <span>Built with <span className="text-rose-400">♥</span> by</span>
+            <a 
+              href="https://growifyindia.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block hover:opacity-80 transition-opacity"
+            >
+              <img 
+                src="\src\assets\image.png" 
+                alt="Growify India" 
+                className="h-6 inline-block"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
