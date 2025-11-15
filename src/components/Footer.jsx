@@ -78,7 +78,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-white">Follow Us</h3>
             <div className="flex space-x-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/the_makeup_house_gulabpura/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 hover:bg-rose-500 rounded-full flex items-center justify-center transition-colors"
@@ -87,7 +87,7 @@ const Footer = () => {
                 <Instagram className="w-5 h-5 text-white" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.instagram.com/the_makeup_house_gulabpura/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 hover:bg-rose-500 rounded-full flex items-center justify-center transition-colors"
@@ -96,7 +96,7 @@ const Footer = () => {
                 <Facebook className="w-5 h-5 text-white" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://www.instagram.com/the_makeup_house_gulabpura/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 hover:bg-rose-500 rounded-full flex items-center justify-center transition-colors"

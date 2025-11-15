@@ -1,4 +1,4 @@
-// src/pages/Gallery.jsx
+    // src/pages/Gallery.jsx
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Lightbox from '@/components/Lightbox'
@@ -86,30 +86,51 @@ const Gallery = () => {
           </p>
         </motion.div>
 
-        {/* Image Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {images.map((image, index) => (
-            <motion.div
-              key={image.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              whileHover={{ scale: 1.05 }}
-              className="relative overflow-hidden rounded-xl shadow-lg cursor-pointer group"
-              onClick={() => handleImageClick(index)}
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                loading="lazy"
-                className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <p className="text-white text-sm font-medium">{image.alt}</p>
-              </div>
-            </motion.div>
-          ))}
+        {/* Bento Grid */}
+        <div className="grid grid-cols-12 gap-4 max-w-7xl mx-auto auto-rows-[200px]">
+          {images.map((image, index) => {
+            // Bento grid pattern - varied sizes
+            const getGridClass = (idx) => {
+              const patterns = [
+                'col-span-12 sm:col-span-6 row-span-2', // Large
+                'col-span-12 sm:col-span-6 row-span-1', // Wide short
+                'col-span-12 sm:col-span-4 row-span-2', // Tall
+                'col-span-12 sm:col-span-4 row-span-1', // Small
+                'col-span-12 sm:col-span-4 row-span-1', // Small
+                'col-span-12 sm:col-span-6 row-span-2', // Large
+                'col-span-12 sm:col-span-6 row-span-1', // Wide short
+                'col-span-12 sm:col-span-6 row-span-1', // Wide short
+              ]
+              return patterns[idx % patterns.length]
+            }
+
+            return (
+              <motion.div
+                key={image.id}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className={`relative overflow-hidden rounded-2xl shadow-luxury cursor-pointer group ${getGridClass(index)}`}
+                onClick={() => handleImageClick(index)}
+              >
+                <motion.img
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.5 }}
+                  src={image.src}
+                  alt={image.alt}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-800/90 via-brand-800/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                  <span className="inline-block px-3 py-1 bg-rose-500 text-white text-xs font-bold rounded-full mb-2 w-fit">
+                    {image.category}
+                  </span>
+                  <p className="text-white text-sm font-medium">{image.alt}</p>
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
 

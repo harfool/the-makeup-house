@@ -49,39 +49,29 @@ const Contact = () => {
       return
     }
 
-    try {
-      // Submit to mock endpoint
-      const response = await fetch('/.netlify/functions/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+    // Create WhatsApp message
+    const whatsappMessage = `*New Booking Request*%0A%0A*Name:* ${encodeURIComponent(formData.name)}%0A*Phone:* ${encodeURIComponent(formData.phone)}%0A*Email:* ${encodeURIComponent(formData.email)}${formData.service ? `%0A*Service:* ${encodeURIComponent(formData.service)}` : ''}${formData.message ? `%0A*Message:* ${encodeURIComponent(formData.message)}` : ''}`
+    
+    // Open WhatsApp
+    window.open(`https://wa.me/918955748498?text=${whatsappMessage}`, '_blank')
+    
+    // Show success message
+    setStatus({
+      type: 'success',
+      message: 'Redirecting to WhatsApp... Please send the message to complete your booking request.',
+    })
+    
+    // Reset form
+    setTimeout(() => {
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        service: '',
+        message: '',
       })
-
-      if (response.ok) {
-        setStatus({
-          type: 'success',
-          message: 'Thank you! We will get back to you shortly.',
-        })
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          service: '',
-          message: '',
-        })
-      } else {
-        throw new Error('Submission failed')
-      }
-    } catch (error) {
-      setStatus({
-        type: 'error',
-        message: 'Oops! Something went wrong. Please try again or call us directly.',
-      })
-    } finally {
       setIsSubmitting(false)
-    }
+    }, 2000)
   }
 
   const contactInfo = [
@@ -105,7 +95,7 @@ const Contact = () => {
     {
       icon: Clock,
       title: 'Working Hours',
-      content: 'Open 24 Hours - 7 Days a Week',
+      content: 'Mon-Fri: 10:00 AM - 8:00 PM | Sat: Open 24 Hrs | Sun: 10:00 AM - 8:00 PM',
     },
   ]
 
@@ -240,10 +230,10 @@ const Contact = () => {
 
                   <Button
                     type="submit"
-                    className="w-full"
+                    className="w-full bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {isSubmitting ? 'Opening WhatsApp...' : 'Send via WhatsApp'}
                   </Button>
                 </form>
               </CardContent>
@@ -309,16 +299,28 @@ const Contact = () => {
               </div>
             </Card>
 
-            {/* Map Placeholder */}
+            {/* Google Maps */}
             <Card className="p-0 overflow-hidden">
-              <div className="bg-gray-200 h-64 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                  <p className="text-gray-500">Map Location</p>
-                  <p className="text-sm text-gray-400">
-                    Replace with Google Maps embed
-                  </p>
-                </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.7891234567!2d74.6592313!3d25.9069547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39693f736deecccf%3A0x5a1147e7f3dac9e9!2sThe%20Makeup%20House!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="The Makeup House Location"
+              ></iframe>
+              <div className="p-4 bg-white">
+                <a
+                  href="https://www.google.com/maps/place/The+Makeup+House/@25.9069547,74.6592313,17z/data=!4m14!1m7!3m6!1s0x39693f736deecccf:0x5a1147e7f3dac9e9!2sThe+Makeup+House!8m2!3d25.9069547!4d74.6592313!16s%2Fg%2F11t1g4wgcq!3m5!1s0x39693f736deecccf:0x5a1147e7f3dac9e9!8m2!3d25.9069547!4d74.6592313!16s%2Fg%2F11t1g4wgcq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center space-x-2 text-brand hover:text-rose-600 transition-colors font-medium"
+                >
+                  <MapPin className="w-4 h-4" />
+                  <span>View on Google Maps</span>
+                </a>
               </div>
             </Card>
           </motion.div>

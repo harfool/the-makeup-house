@@ -116,31 +116,31 @@ const Services = () => {
                 className="glass rounded-3xl overflow-hidden h-full hover:shadow-luxury-lg transition-all duration-500"
               >
                 {/* Icon Header with Gradient */}
-                <div className={`bg-gradient-to-br ${service.gradient} p-8 relative overflow-hidden`}>
+                <div className={`bg-gradient-to-br ${service.gradient} p-6 relative overflow-hidden`}>
                   <motion.div
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.8 }}
-                    className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-4"
+                    className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-3"
                   >
-                    <service.icon className="w-8 h-8 text-white drop-shadow-lg" />
+                    <service.icon className="w-6 h-6 text-white drop-shadow-lg" />
                   </motion.div>
                   
-                  <h3 className="font-display text-3xl font-bold text-white mb-2">
+                  <h3 className="font-display text-2xl font-bold text-white mb-2">
                     {service.title}
                   </h3>
                   
                   {/* Decorative Line */}
-                  <div className="w-16 h-1 bg-white/40 rounded-full" />
+                  <div className="w-12 h-1 bg-white/40 rounded-full" />
                 </div>
 
                 {/* Service Details */}
-                <div className="p-8">
-                  <p className="text-brand-600/80 mb-6 leading-relaxed">
+                <div className="p-6">
+                  <p className="text-brand-600/80 mb-4 leading-relaxed text-sm">
                     {service.description}
                   </p>
 
                   {/* Features List */}
-                  <div className="space-y-3 mb-6">
+                  <div className="space-y-2 mb-4">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center space-x-3">
                         <div className="w-5 h-5 rounded-full bg-gradient-to-r from-rose-400 to-rose-500 flex items-center justify-center flex-shrink-0">
@@ -152,24 +152,28 @@ const Services = () => {
                   </div>
 
                   {/* Pricing */}
-                  <div className="flex items-baseline space-x-2 mb-6 pb-6 border-b border-brand-200/30">
-                    <span className="font-display text-5xl font-bold gradient-text">
+                  <div className="flex items-baseline space-x-2 mb-4 pb-4 border-b border-brand-200/30">
+                    <span className="font-display text-4xl font-bold gradient-text">
                       ₹{service.price}
                     </span>
-                    <span className="text-brand-500 text-sm font-light">starting</span>
+                    <span className="text-brand-500 text-xs font-light">starting</span>
                   </div>
 
                   {/* CTA Button */}
-                  <Link to="/contact">
+                  <a
+                    href={`https://wa.me/918955748498?text=Hi%2C%20I%27m%20interested%20in%20booking%20*${encodeURIComponent(service.title)}*%20(₹${service.price})%0A%0APlease%20provide%20more%20details.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="group/btn w-full flex items-center justify-center space-x-2 py-4 bg-gradient-to-r from-brand-600 to-rose-500 text-white rounded-2xl font-semibold shadow-luxury hover:shadow-glow transition-all duration-300 btn-glow"
+                      className="group/btn w-full flex items-center justify-center space-x-2 py-3 bg-gradient-to-r from-green-600 to-green-500 text-white rounded-xl font-semibold shadow-luxury hover:shadow-glow transition-all duration-300 btn-glow text-sm"
                     >
-                      <span>Book This Service</span>
+                      <span>Book via WhatsApp</span>
                       <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                     </motion.button>
-                  </Link>
+                  </a>
                 </div>
               </motion.div>
             </motion.div>
