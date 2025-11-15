@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Gallery from './pages/Gallery'
 import Services from './pages/Services'
@@ -12,6 +13,7 @@ import Contact from './pages/Contact'
 function App() {
   return (
     <div className="min-h-screen bg-cream font-poppins">
+      <ScrollToTop />
       <Nav />
       <main>
         <Routes>
