@@ -9,37 +9,37 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      src: 'https://www.justdial.com/photos/the-makeup-house-gulabpura-beauty-parlours-yj4680ad63-pc-325243949-sco-99vctmm75zy',
+      src: 'https://images.jdmagicbox.com/comp/gulabpura/i5/9999p1482.1482.230904193654.x3i5/catalogue/the-makeup-house-gulabpura-beauty-parlours-udfrqirwdp.jpg',
       alt: 'The Makeup House - Bridal Makeup',
       category: 'Bridal',
     },
     {
       id: 2,
-      src: 'https://www.justdial.com/photos/the-makeup-house-gulabpura-beauty-parlours-udfrqirwdp-pc-325243951-sco-99vctmm75zy',
+      src: 'https://images.jdmagicbox.com/comp/gulabpura/i5/9999p1482.1482.230904193654.x3i5/catalogue/the-makeup-house-gulabpura-beauty-parlours-yj4680ad63.jpg',
       alt: 'The Makeup House - Bridal Look',
       category: 'Bridal',
     },
     {
       id: 3,
-      src: 'https://www.justdial.com/photos/the-makeup-house-gulabpura-beauty-parlours-bmip8x4qql-pc-325243956-sco-99vctmm75zy',
+      src: 'https://images.jdmagicbox.com/comp/gulabpura/i5/9999p1482.1482.230904193654.x3i5/catalogue/the-makeup-house-gulabpura-beauty-parlours-voaznlsljg.jpg',
       alt: 'The Makeup House - Makeup Artistry',
       category: 'Bridal',
     },
     {
       id: 4,
-      src: 'https://www.justdial.com/photos/the-makeup-house-gulabpura-beauty-parlours-5ovh1aikje-pc-325244019-sco-99vctmm75zy',
+      src: 'https://images.jdmagicbox.com/comp/gulabpura/i5/9999p1482.1482.230904193654.x3i5/catalogue/the-makeup-house-gulabpura-beauty-parlours-bmip8x4qql.jpg',
       alt: 'The Makeup House - Bridal Makeup',
       category: 'Bridal',
     },
     {
       id: 5,
-      src: 'https://www.justdial.com/photos/the-makeup-house-gulabpura-beauty-parlours-voaznlsljg-pc-346077695-sco-99vctmm75zy',
+      src: 'https://lh3.googleusercontent.com/gps-cs-s/AG0ilSw-gk-OsikH7wylmMylhKqeNf9IdbxpGvkKk1Xi68ySZBVc9MB9Nex00oX525yyIReca47GfffWetMgZBlP3KCXwnZhIkmSD8HeJGuwZ28ROGYhotu9AzVxIsVqlkQ3DDLiJeL-=s1360-w1360-h1020-rw',
       alt: 'The Makeup House - Party Makeup',
       category: 'Party',
     },
     {
       id: 6,
-      src: 'https://www.justdial.com/photos/the-makeup-house-gulabpura-bazar-gulabpura-beauty-parlours-01yx2auobl-pc-362644328-sco-99vctmm75zy',
+      src: 'https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxo42WoHwdlN9sBpDX7AEybLeWGsXvWhi9d31sVPEgQLDoOckyIU0tgymkQRMvOfj4e0WHZkS5ByweaABjw9V8czWQKBTUf4Ghcj02ruYAx-MlW37VB1GsKYsFGO1vX849gOHNHCA=s1360-w1360-h1020-rw',
       alt: 'The Makeup House - Professional Makeup',
       category: 'Professional',
     },
@@ -87,21 +87,21 @@ const Gallery = () => {
         </motion.div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-12 gap-4 max-w-7xl mx-auto auto-rows-[200px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {images.map((image, index) => {
-            // Bento grid pattern - varied sizes
-            const getGridClass = (idx) => {
-              const patterns = [
-                'col-span-12 sm:col-span-6 row-span-2', // Large
-                'col-span-12 sm:col-span-6 row-span-1', // Wide short
-                'col-span-12 sm:col-span-4 row-span-2', // Tall
-                'col-span-12 sm:col-span-4 row-span-1', // Small
-                'col-span-12 sm:col-span-4 row-span-1', // Small
-                'col-span-12 sm:col-span-6 row-span-2', // Large
-                'col-span-12 sm:col-span-6 row-span-1', // Wide short
-                'col-span-12 sm:col-span-6 row-span-1', // Wide short
+            // Varied heights for bento effect
+            const getHeightClass = (idx) => {
+              const heights = [
+                'h-[400px]', // Tall
+                'h-[320px]', // Medium
+                'h-[400px]', // Tall
+                'h-[280px]', // Short
+                'h-[350px]', // Medium-tall
+                'h-[320px]', // Medium
+                'h-[400px]', // Tall
+                'h-[300px]', // Medium
               ]
-              return patterns[idx % patterns.length]
+              return heights[idx % heights.length]
             }
 
             return (
@@ -111,7 +111,7 @@ const Gallery = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className={`relative overflow-hidden rounded-2xl shadow-luxury cursor-pointer group ${getGridClass(index)}`}
+                className={`relative overflow-hidden rounded-2xl shadow-luxury cursor-pointer group ${getHeightClass(index)}`}
                 onClick={() => handleImageClick(index)}
               >
                 <motion.img
@@ -120,7 +120,11 @@ const Gallery = () => {
                   src={image.src}
                   alt={image.alt}
                   loading="lazy"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
+                  onError={(e) => {
+                    e.target.style.display = 'block'
+                    e.target.style.backgroundColor = '#f3f4f6'
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-800/90 via-brand-800/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                   <span className="inline-block px-3 py-1 bg-rose-500 text-white text-xs font-bold rounded-full mb-2 w-fit">
