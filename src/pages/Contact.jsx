@@ -88,7 +88,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Visit Us',
-      content: '123 Beauty Street, Fashion District, City, 12345',
+      content: 'Near Hdfc Bank, Gulabpura Bazar-311021',
     },
     {
       icon: Phone,
@@ -105,7 +105,7 @@ const Contact = () => {
     {
       icon: Clock,
       title: 'Working Hours',
-      content: 'Mon-Sat: 9:00 AM - 7:00 PM, Sunday: By Appointment',
+      content: 'Open 24 Hours - 7 Days a Week',
     },
   ]
 

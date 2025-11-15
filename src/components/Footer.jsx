@@ -55,7 +55,7 @@ const Footer = () => {
               <li className="flex items-start space-x-2">
                 <MapPin className="w-5 h-5 text-rose-400 mt-0.5 flex-shrink-0" />
                 <span className="text-white/70 text-sm">
-                  123 Beauty Street, Fashion District, City, 12345
+                  Near Hdfc Bank, Gulabpura Bazar-311021
                 </span>
               </li>
               <li className="flex items-center space-x-2">

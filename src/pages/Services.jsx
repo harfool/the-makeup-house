@@ -11,9 +11,9 @@ const Services = () => {
     {
       icon: Crown,
       title: 'Bridal Makeup',
-      description: 'Look stunning on your special day with our signature bridal makeup. Flawless, long-lasting, and camera-perfect.',
-      price: '250',
-      features: ['Trial Session', 'Premium Products', 'Touch-up Kit'],
+      description: 'Look stunning on your special day with our signature bridal makeup. Flawless, long-lasting, and camera-perfect with Kryolan waterproof products.',
+      price: '15,000',
+      features: ['Hair Styling Included', 'Saree Draping', 'Trial Session', 'Waterproof Products'],
       gradient: 'from-rose-400 to-rose-600',
       popular: true,
     },
@@ -21,41 +21,41 @@ const Services = () => {
       icon: Star,
       title: 'Party Makeup',
       description: 'Glamorous looks that turn heads at celebrations, galas, and special events.',
-      price: '150',
+      price: '4,500',
       features: ['Bold & Glam', 'Long-wearing', 'Photo-ready'],
       gradient: 'from-brand-500 to-brand-700',
     },
     {
-      icon: Sun,
-      title: 'Natural/Day Makeup',
-      description: 'Subtle elegance that enhances your natural beauty for daily confidence.',
-      price: '80',
-      features: ['Fresh Look', 'Light Coverage', 'Quick Service'],
-      gradient: 'from-gold-400 to-gold-500',
-    },
-    {
-      icon: Moon,
-      title: 'Evening Makeup',
-      description: 'Sophisticated and dramatic looks perfect for formal dinners and evening events.',
-      price: '120',
-      features: ['Elegant Style', 'Refined Finish', 'Premium Glow'],
+      icon: Sparkles,
+      title: 'Hair Styling',
+      description: 'Expert hair styling services for any occasion - from everyday styles to intricate updos and braids.',
+      price: '2,000',
+      features: ['Cutting & Styling', 'Updos & Braids', 'Professional Products'],
       gradient: 'from-purple-400 to-purple-600',
     },
     {
+      icon: Sun,
+      title: 'Hair Cut',
+      description: 'Personalized haircuts that enhance your features and maintain healthy hair growth.',
+      price: '500',
+      features: ['Expert Consultation', 'Styling Tips', 'Scalp Health'],
+      gradient: 'from-gold-400 to-gold-500',
+    },
+    {
       icon: Heart,
-      title: 'Engagement Makeup',
-      description: 'Capture the romance and joy of your engagement with flawless makeup artistry.',
-      price: '180',
-      features: ['Romantic Look', 'Professional Finish', 'Complimentary Touch-ups'],
+      title: 'Hair Colour',
+      description: 'Professional hair coloring from natural shades to bold creative colors. Semi-permanent and permanent options available.',
+      price: '3,500',
+      features: ['Color Consultation', 'Premium Dyes', 'Grey Coverage'],
       gradient: 'from-pink-400 to-pink-600',
     },
     {
-      icon: Sparkles,
-      title: 'HD Makeup',
-      description: 'High-definition makeup that looks stunning in person and perfect on camera.',
-      price: '200',
-      features: ['HD Formula', 'Photoshoot Ready', 'Video Perfect'],
-      gradient: 'from-blue-400 to-blue-600',
+      icon: Crown,
+      title: 'Bridal Hair Do',
+      description: 'Complete bridal hair styling including volume treatments and intricate designs for your special day.',
+      price: '5,000',
+      features: ['Volume Treatment', 'Intricate Styling', 'Long-lasting Hold'],
+      gradient: 'from-rose-500 to-rose-700',
     },
   ]
 
@@ -154,7 +154,7 @@ const Services = () => {
                   {/* Pricing */}
                   <div className="flex items-baseline space-x-2 mb-6 pb-6 border-b border-brand-200/30">
                     <span className="font-display text-5xl font-bold gradient-text">
-                      ${service.price}
+                      ₹{service.price}
                     </span>
                     <span className="text-brand-500 text-sm font-light">starting</span>
                   </div>
